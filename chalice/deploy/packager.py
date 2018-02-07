@@ -675,8 +675,8 @@ class PipRunner(object):
                            "  Link is a directory, "
                            "ignoring download_dir"), stdout)
         if match:
-            download_dir = match.group(1).decode()
-            self.build_wheel(download_dir.encode(), directory)
+            download_dir = match.group(1)
+            self.build_wheel(download_dir, directory)
 
     def download_manylinux_wheels(self, packages, directory):
         # type: (List[str], str) -> None

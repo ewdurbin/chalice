@@ -139,7 +139,7 @@ class SAMTemplateGenerator(object):
         if not config.manage_iam_role:
             properties['Role'] = config.iam_role_arn
         else:
-            properties['Policies'] = [self._generate_iam_policy()]
+            properties['Policies'] = [self._generate_iam_policy(config)]
         if config.security_group_ids and config.subnet_ids:
             properties['VpcConfig'] = {
                 'SubnetIds': config.subnet_ids,
